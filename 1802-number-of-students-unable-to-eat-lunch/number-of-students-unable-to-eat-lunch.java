@@ -14,14 +14,14 @@ class Solution {
                 s.pop();
                 count = 0;
             }
-            if(count == q.size()){
-                break;
-            }
             else{
                 q.offer(q.poll());
                 count++;
+                if(count == q.size()){
+                break;
+                }
             }
         }
-        return count;
+        return q.size();
     }
 }
