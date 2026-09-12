@@ -22,6 +22,6 @@ class Solution {
                 }
             }
         }
-        return q.size();
+        return count;
     }
 }
