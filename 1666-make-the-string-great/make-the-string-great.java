@@ -1,25 +1,15 @@
 class Solution {
     public String makeGood(String s) {
-        if(s.length()<=1){
-            return s;
-        }
-        String ans="";
-            Stack <Character> st = new Stack<>();
-            for(int i = 0; i < s.length();i++){
-                char c = s.charAt(i);
-                if (!st.isEmpty() &&
-                Character.toLowerCase(c) == Character.toLowerCase(st.peek()) &&
-                Character.isUpperCase(c) != Character.isUpperCase(st.peek())) {
-
-                st.pop();
-            } 
-            else {
-                st.push(c);
+        int top = 0;
+        char[] stack = new char[s.length()];
+        for(char c : s.toCharArray()){
+            if(top>0 && Math.abs(stack[top-1]-c)==32 ){
+                top--;
             }
+            else{
+                stack[top++]=c;
             }
-        for(char c : st){
-            ans+=c;
         }
-        return ans;
+        return new String(stack,0,top);
     }
 }
