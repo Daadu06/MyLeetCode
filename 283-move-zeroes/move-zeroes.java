@@ -13,8 +13,5 @@ class Solution {
                 i++;
             }
         }
-        for(int num : nums){
-            System.out.println(num);
-        }
     }
 }
