@@ -12,7 +12,6 @@ class Solution {
             else if(c==')'){
                 curr--;
             }
-
         }
         return max;
     }
